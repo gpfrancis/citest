@@ -1,7 +1,12 @@
 pipeline {
-    agent { docker { image 'python:3.8' } }
+    agent any 
     stages {
-        stage('build') {
+        stage('Say hello') {
+            steps {
+                echo 'Hello world' 
+            }
+        }
+        stage('Check python') {
             steps {
                 sh 'python --version'
             }
